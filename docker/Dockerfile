@@ -21,8 +21,8 @@ LABEL\
 	org.opencontainers.image.version=$VERSION
 
 # Update certificates.
-RUN apk --no-cache add ca-certificates libcap tzdata && \
-	mkdir -p /opt/adguardhome/conf /opt/adguardhome/work && \
+RUN apk --no-cache add ca-certificates libcap tzdata certbot && \
+	mkdir -p /opt/adguardhome/conf /opt/adguardhome/work /opt/adguardhome/certificate && \
 	chown -R nobody: /opt/adguardhome
 
 ARG DIST_DIR
